@@ -57,6 +57,10 @@ app.get("/gib/:org", (req, res) => { // the "/donate" slug is taken
   res.redirect(302, "https://bank.hackclub.com/donations/start/" + req.params.org)
 })
 
+app.get("/wrapped/:data", (req, res) => { // fancy handler for hack.af/wrapped
+  res.redirect(302, "https://https://bank-wrapped.hackclub.com/share?q=" + req.params.data)
+})
+
 // not api: fetch URL and redirect
 app.get("/*", (req, res) => {
   var slug = req.path.substring(1);
